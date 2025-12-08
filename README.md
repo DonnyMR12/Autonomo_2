@@ -8,9 +8,9 @@ Actualmente, el programa funciona de manera básica; sin embargo, aún existen a
 
 El repositorio esta organizado por el momento de la siguiente manera:
 
--El archivo py, donde se encuentra el código del juego esta en la carpeta piedra, papel tijera.
+-El archivo py, donde se encuentra el código del juego, esta en la carpeta piedra, papel tijera.
 
--El diagrama de flujo está en la carpeta de fiagrama de flujo.
+-El diagrama de flujo está en la carpeta de diagrama de flujo.
 
 *Programa utilizado: Spyder
 
