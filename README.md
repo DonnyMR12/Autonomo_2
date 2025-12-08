@@ -42,23 +42,23 @@ print("Las reglas del juego son: ")
 
 print("-Piedra gana a tijera\n-Tijera gana a papel.\n-Papel gana a piedra.\n-Si ambos sacan la misma opcion será empate.\n")
 
--En esta parte del código se utilize la función print(), la cual me sirve para imprimir los textos en la pantalla osea me va a mostrar el mensaje de bienvenida y las reglas del juego.
+-En esta parte del código utilize la función print(), la cual me sirve para imprimir los textos en la pantalla; es decir me va a mostrar el mensaje de bienvenida y las reglas del juego.
 
 opciones=["piedra","papel","tijera"]
 
 -Esta es una variable de tipo lista que contiene las opciones válidas del juego.
 
-De esta lista el jugador elige su jugada y la computadora tambien elige una opcón, pero de manera aleatoria
+De esta lista, el jugador elige su jugada y la computadora tambien elige una opción, pero de manera aleatoria
 
 while True:
 
--Aquí utilizo el while true para que el juego se repita varias en el momento que ponga si quiere volver a jugar,  y sino break para detener el bucle y finalizar el juego.
+-Aquí utilizo el while true para que el juego se repita varias en el momento que ponga si quiere volver a jugar,  y sino, break para detener el bucle y finalizar el juego.
 
 while jugador not in opciones:
 
--Este ciclo se asegura de que el jugador solo ingrese opciones validas.
+-Este ciclo se asegura de que el jugador solo ingrese opciones válidas.
 
-Si el jugador escribe una opción que este fuera de la lista de opciones, el programa muestra el el mensaje de que vuelvas a esvcribir y vuelve a pedir la opcion correcta.
+Si el jugador escribe una opción que esté fuera de la lista de opciones, el programa muestra el el mensaje de que vuelvas a escribir y vuelve a pedir la opción correcta.
 
 pc=random.choice(opciones)
 
@@ -79,7 +79,7 @@ En esta parte del código se utiliza la función print(= para mostrar en la pant
         print("Empataste!")
     else:
         print("Perdiste! :c")
--Se usa las estructuras condicionales para comparar las opciones del jugador con la pc y determinar si el jugador gana o empata. En este caso se puede observar  que todas las condicionales el jugador gana y si no gana empata, y si pierde, pierde ya por los descartes .
+-Se usa las estructuras condicionales para comparar las opciones del jugador con la pc y determinar si el jugador gana o empata. En este caso, se puede observar  que todas las condicionales el jugador gana y, si no gana, empata, y si pierde, pierde ya por los descartes .
 
     new_partida=input("Quieres volver a jugar? Si(Y)/No(N): ").upper().strip()
     if new_partida == "N" or (new_partida != "Y" and new_partida != "N"):
@@ -89,7 +89,7 @@ En esta parte del código se utiliza la función print(= para mostrar en la pant
         print("[+++++++++++++++++++++++]")
         print("Cargando nuevamente...")
         print("[+++++++++++++++++++++++]")
--En esta parte del codigo se pregunta al jugador si desea volver a jugar o finalizar la partida. La respuesta se valida y según lo que ingrese el jugador, el juego se reinicia o se termina.
+-En esta parte del codigo le pregunta al jugador si desea volver a jugar o finalizar la partida. La respuesta se válida y según lo que ingrese el jugador, el juego se reinicia o se termina.
 
 
 
