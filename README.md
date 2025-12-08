@@ -1,4 +1,4 @@
-# Autonomo_2
+# Autónomo_2
 *Progreso de la codificación del juego piedra, papel tijeras
 
 Este deber autónomo consistió en realizar el diagrama de flujo del juego piedra papel tijera y posteriormente intentar replicar la idea de dicho diagrama en el lenguaje de programación Phyton (codificarlo).
