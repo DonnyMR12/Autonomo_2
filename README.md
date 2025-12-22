@@ -1,16 +1,9 @@
-# Autónomo_2
-*Progreso de la codificación del juego piedra, papel tijeras
+# Evaluación contacto con el docente
+Juego totalmente funcional
 
-Este deber autónomo consistió en realizar el diagrama de flujo del juego piedra papel tijera y posteriormente intentar replicar la idea de dicho diagrama en el lenguaje de programación Phyton (codificarlo).
-Actualmente, el programa funciona de manera básica; sin embargo, aún existen algunos detalles por corregir o integrar, los cuales se irán corrigiendo conforme pase el tiempo, cuando adquiera más conocimiento de programación y se sigan las instrucciones dadas por la profesora.
+Esta es una evaluación donde se intenta integrar todo lo visto de las 4 unidades al proyecto Juego Piedra, Papel o Tijera. Este programa es funcional; el juego Piedra, Papel o Tijera viene de un proceso de aprendizaje tanto de los conocimientos aprendidos en clase como de los conocimientos autónomos. Se hicieron diagramas de funcionalidad, arquitectura y diagaramas de flujo para poder llegar a es resultado. Estos diagramas fueron la base, junto los conocimientos de clase para realizar el código de mi juego.
 
 *Estructura del repositorio
-
-El repositorio esta organizado por el momento de la siguiente manera:
-
--El archivo py, donde se encuentra el código del juego, esta en la carpeta piedra, papel tijera.
-
--El diagrama de flujo está en la carpeta de diagrama de flujo.
 
 *Programa utilizado: Spyder
 
@@ -20,76 +13,163 @@ Lenguaje de programación: Phyton
 
 Versión de Phyton: 3.12.11
 
-*Librería utilizada
+*Librerias
 
-Libreria random se usa para generar la eleccion aleatoria de la pc duarante el juego con import random es una libreria integrada en Python.
+Ninguna
 
-*Código del juego
-A continuación se muestra el código parte por parte del juego y haré una breve explicación:
+Indico que ya no se podía hacer uso de las librerias y que, si queriamos usarlas, debíamos crealas nosotros mismos o por medio de las funciones. Yo opte por las funciones.
 
-import random
-
--Es una libreria interna de Python que sirve para generar cosas al azar.
-
-print("Iniciando juego.....")
+*Variables generales
 
 
-print("Bienvenid@ al juego piedra,papel y tijera")
+<img width="413" height="81" alt="1" src="https://github.com/user-attachments/assets/3474d167-f762-4d01-954c-cb65e3692a1b" />
+
+juego_iniciado=True
+
+-Es una variable booleana que utilizo para controlar el menú principal del juego mientras su valor sea True, el menú se seguira mostrando.
+
+opciones = ["piedra","papel","tijera"]
+
+-Es una variable tipo lista que contiene las opciones válidas del juego: piedra, papel y tijera.
+
+-Esta lista se utiliza tanto para validar la entrada del jugador como para la elección de la computadora.
+
+contador=0
+
+-Esta variable que se usa dentro de una función para simular la aletoariedad de la pc.
+
+numero_rondas=0
+
+-Aquí se almacenará la cantidad de rondas que el jugador ingrese por teclado.
+
+*Mostrar reglas del juego
 
 
-print("Las reglas del juego son: ")
+<img width="1296" height="87" alt="2" src="https://github.com/user-attachments/assets/f6d3d0c6-3080-46dd-bd53-b93009e9b1a0" />
+
+-Aquí la función muestra las reglas del juego en la consola mediante el uso del print
+
+-Se uso /n para hacer un salto de línea
+
+*Seleccion aleatoria de la máquina
+
+<img width="492" height="127" alt="3" src="https://github.com/user-attachments/assets/a629fb0f-85fc-4c70-98df-ade98e49cda1" />
 
 
-print("-Piedra gana a tijera\n-Tijera gana a papel.\n-Papel gana a piedra.\n-Si ambos sacan la misma opcion será empate.\n")
+-La función realiza una seleccion aleatoria entre (piedra, papel, tijera)
 
--En esta parte del código utilize la función print(), la cual me sirve para imprimir los textos en la pantalla; es decir me va a mostrar el mensaje de bienvenida y las reglas del juego.
+-Global contador: Se utiliza global en la variable contador para poder modficar el valor del mismo, ya que es una variable general.
 
-opciones=["piedra","papel","tijera"]
+-Contador +=1 :esta línea incrementa un uno cada vez que se ejecute la función, dado que contador siempre inicia con 0 cuando se inicia el programa.
 
--Esta es una variable de tipo lista que contiene las opciones válidas del juego.
+-(valor_aleatorio= contador * 7 ) : Esta línea multiplica el contador * 7 para tener un número aleatorio, ya que el contador se incrementa en cada llamada de la función.
 
-De esta lista, el jugador elige su jugada y la computadora tambien elige una opción, pero de manera aleatoria
+-(indice= valor_aleatorio % 3): El operador de residuo o modulo => Esto devuelve el residuo de dividir el número anterior *3
 
-while True:
+-El resultado de dividir cualquier número entero *3. los unicos residuos posibles son: 0, 1 o 2. el resultado se asignará a la variable indice.
 
--Aquí utilizo el while true para que el juego se repita varias en el momento que ponga si quiere volver a jugar,  y sino, break para detener el bucle y finalizar el juego.
+(return opciones[indice]): Esta linea retorna el elemento en base al número de indice que se parametriza de la lista de opciones.
 
-while jugador not in opciones:
 
--Este ciclo se asegura de que el jugador solo ingrese opciones válidas.
+*Parametriza/define rondas
 
-Si el jugador escribe una opción que esté fuera de la lista de opciones, el programa muestra el el mensaje de que vuelvas a escribir y vuelve a pedir la opción correcta.
+<img width="1100" height="286" alt="4" src="https://github.com/user-attachments/assets/f12de378-fb06-4ab0-8004-58b0122b5452" />
 
-pc=random.choice(opciones)
+-Funcion que parametriza rondas: Se encarga de definir cuantas rondas se van a jugar antes de empezar la partida.
 
--Aquí es donde la computadora da uso al import random y selecciona de manera aleatoria desde la lista de opciones usando la función choice.
+-(global numero_rondas): Se utiliza global en la variable contador para poder modificar el valor del mismo ya que es una variable general.
 
-print("El jugador escogió: ", jugador)
-print("La pc escogió: " , pc)
+-except: Aquí se captura las excepciones lo cual permite mostrar en pantalla o finalizar el proceso, claro de ser el caso.
 
-En esta parte del código se utiliza la función print(= para mostrar en la pantalla la opción elegida por el jugador y la opción seleccionada por la computadora.
+-En caso de ingresar un valor no entero en el número no entero mostrará un mensaje de error, ya que esta función solo permite el ingreso de números enteros.
 
-    if jugador == "piedra" and pc == "tijera":
-        print("Ganaste! :D")
-    elif jugador =="tijera" and pc =="papel":
-        print("Ganaste! :D")
-    elif jugador == "papel" and pc == "piedra":
-        print("Ganaste! :D")
-    elif jugador == pc:
-        print("Empataste!")
-    else:
-        print("Perdiste! :c")
--Se usa las estructuras condicionales para comparar las opciones del jugador con la pc y determinar si el jugador gana o empata. En este caso, se puede observar  que todas las condicionales el jugador gana y, si no gana, empata, y si pierde, pierde ya por los descartes .
+-Si el número es menor a 3 o mayor a 10, el programa vuelve a pedir el dato.
 
-    new_partida=input("Quieres volver a jugar? Si(Y)/No(N): ").upper().strip()
-    if new_partida == "N" or (new_partida != "Y" and new_partida != "N"):
-        print("Partida finalizada.")
-        break
-    else:
-        print("[+++++++++++++++++++++++]")
-        print("Cargando nuevamente...")
-        print("[+++++++++++++++++++++++]")
--En esta parte del codigo le pregunta al jugador si desea volver a jugar o finalizar la partida. La respuesta se válida y según lo que ingrese el jugador, el juego se reinicia o se termina.
+-Si el número esta entre 3 y 10 guarda el valor y break rompe el ciclo.
+
+*La elección del jugador
+
+<img width="935" height="152" alt="5" src="https://github.com/user-attachments/assets/6fd417cf-11ff-4384-9b16-9ab50ca552ba" />
+
+-Se sabe bien que el while true es un bucle, hasta que el jugador no ingrese la opción correcta se va seguir repitiendo.
+
+-Si la respuesta, es decir la elección del jugador, está dentro de la lista de opciones, esta será retornada.
+
+-Lower() y strip(): Pasa todo a minúsculas y el otro quita espacios.
+
+*Determinar ganador:
+
+<img width="457" height="158" alt="6" src="https://github.com/user-attachments/assets/a90003a3-1383-4968-9cd3-3d43c925fb4d" />
+
+-El programa mostrará al ganador que tenga más puntos; caso contrario, mostrará empate.
+
+-La funcion requiere de dos parametros "jugador"; será el número de puntos del jugador.
+
+-El parametro "pc"  será el número de puntos de la máquina.
+
+-Entonces se hace la validación.
+
+*Inicialización del juego
+
+<img width="805" height="645" alt="7" src="https://github.com/user-attachments/assets/2fc3be93-e9a0-4634-9777-6bba3c748c8a" />
+
+-Funcionamiento:
+
+-Los puntos de jugador y los puntos de pc iniciarn con 0 cada vez que se ejecute la función iniciar juego()
+
+-Luego la variable jugando se inicia con verdadero para que el ciclo while este activo.
+
+-Se llama la funcion (parametrizar_rondas()) para definir cuántas rondas se van a jugar.
+
+-Se inicia el ciclo while, mismo que se detiene cuando la variable jugando sea falso.
+
+-La siguiente línea valida si el (numero_rondas == 0), en caso que número de rondas sea = 0 mostrará un mensaje partida finalizada, caso contrario seguiá la siguiente ronda.
+
+-Si número de rondas es = 0 => Se llama a la función determinar_ganador(puntos_jugador, puntos_pc), luego se hará una validación si se quiere continuar con el jugando caso contrario se pondra.
+
+-Se finalizará el ciclo while con la variable jugando= false, si en caso de ingresar (Y) se reiniciará los puntos de los jugadores y se llamará a la funcion (parametrizar rondas()).
+
+*Menú
+
+<img width="685" height="480" alt="9" src="https://github.com/user-attachments/assets/8cbc5bb8-4e67-4909-b005-7ee0ca62dac0" />
+
+Seleccionmenu()
+-Esta función se encarga de llamar a las demás funciones según la opción que se ponga en el input.
+
+-El menú funciona mediante el ciclo while juego_inciando, el cual mantiene activo el programa.
+
+-Se puede considerar que esta función es la capa principal que controla todas las funciones que se ejecutan a partir del input.
+
+-Si el jugador digita 1: se llama a la función mostrarreglas()
+
+-Si el jugador digita 2: se llama a la función iniciarjuego()
+
+-Si el jugador digita 3: Se sale del juego, ya que el uso el global para cambiar el valor a la variable juego_iniciado a False.
+
+-Al cambiar juego_iniciado a False, el ciclo del while se rompe y termina el juego.
+
+- Y si no es ninguno de estos, me va mostrá que la opción no es válida y se volverá a empezar el ciclo de seleción
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
 
 
 
