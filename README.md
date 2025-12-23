@@ -1,154 +1,169 @@
 # Evaluación contacto con el docente
-Juego totalmente funcional
+
+### Juego totalmente funcional
 
 Esta es una evaluación donde se intenta integrar todo lo visto de las 4 unidades al proyecto Juego Piedra, Papel o Tijera. Este programa es funcional; el juego Piedra, Papel o Tijera viene de un proceso de aprendizaje tanto de los conocimientos aprendidos en clase como de los conocimientos autónomos. Se hicieron diagramas de funcionalidad, arquitectura y diagaramas de flujo para poder llegar a es resultado. Estos diagramas fueron la base, junto los conocimientos de clase para realizar el código de mi juego.
 
-*Estructura del repositorio
+## Tecnologias
+* Programa utilizado: Spyder
+* Lenguaje de programación: Phyton
+* Versión de Phyton: 3.12.11
+* Librerias (Ninguna): Indico que ya no se podía hacer uso de las librerias y que, si queriamos usarlas, debíamos crealas nosotros mismos o por medio de las funciones. Yo opte por las funciones.
 
-*Programa utilizado: Spyder
+## Diagrama de flujo
 
+![Diagrama Flujo](https://github.com/DonnyMR12/Autonomo_2/blob/main/Diagrama%20de%20flujo.webp?raw=true)
 
-Lenguaje de programación: Phyton
+## Estructura del programa
 
+* Uso de **Variables generales**
 
-Versión de Phyton: 3.12.11
+<img alt="1" src="https://github.com/DonnyMR12/Autonomo_2/blob/main/img1.png?raw=true" />
 
-*Librerias
-
-Ninguna
-
-Indico que ya no se podía hacer uso de las librerias y que, si queriamos usarlas, debíamos crealas nosotros mismos o por medio de las funciones. Yo opte por las funciones.
-
-*Variables generales
-
-
-<img width="413" height="81" alt="1" src="https://github.com/user-attachments/assets/3474d167-f762-4d01-954c-cb65e3692a1b" />
-
+```
 juego_iniciado=True
-
--Es una variable booleana que utilizo para controlar el menú principal del juego mientras su valor sea True, el menú se seguira mostrando.
-
+```
+* Es una variable booleana que utilizo para controlar el menú principal del juego mientras su valor sea True, el menú se seguira mostrando.
+```
 opciones = ["piedra","papel","tijera"]
+```
+* Es una variable tipo lista que contiene las opciones válidas del juego: piedra, papel y tijera.
 
--Es una variable tipo lista que contiene las opciones válidas del juego: piedra, papel y tijera.
-
--Esta lista se utiliza tanto para validar la entrada del jugador como para la elección de la computadora.
-
+- Esta lista se utiliza tanto para validar la entrada del jugador como para la elección de la computadora.
+```
 contador=0
-
--Esta variable que se usa dentro de una función para simular la aletoariedad de la pc.
-
+```
+* Esta variable que se usa dentro de una función para simular la aletoariedad de la pc.
+```
 numero_rondas=0
+```
+* Aquí se almacenará la cantidad de rondas que el jugador ingrese por teclado.
 
--Aquí se almacenará la cantidad de rondas que el jugador ingrese por teclado.
+* Mostrar reglas del juego
 
-*Mostrar reglas del juego
+<img alt="2" src="https://github.com/DonnyMR12/Autonomo_2/blob/main/img2.png?raw=true" />
 
+* Aquí la función muestra las reglas del juego en la consola mediante el uso del print
 
-<img width="1296" height="87" alt="2" src="https://github.com/user-attachments/assets/f6d3d0c6-3080-46dd-bd53-b93009e9b1a0" />
+* Se uso /n para hacer un salto de línea
 
--Aquí la función muestra las reglas del juego en la consola mediante el uso del print
+* Seleccion aleatoria de la máquina
 
--Se uso /n para hacer un salto de línea
-
-*Seleccion aleatoria de la máquina
-
-<img width="492" height="127" alt="3" src="https://github.com/user-attachments/assets/a629fb0f-85fc-4c70-98df-ade98e49cda1" />
+<img alt="3" src="https://github.com/DonnyMR12/Autonomo_2/blob/main/img3.png?raw=true" />
 
 
--La función realiza una seleccion aleatoria entre (piedra, papel, tijera)
+* La función realiza una seleccion aleatoria entre (piedra, papel, tijera)
 
--Global contador: Se utiliza global en la variable contador para poder modficar el valor del mismo, ya que es una variable general.
+* Global contador: Se utiliza global en la variable contador para poder modficar el valor del mismo, ya que es una variable general.
 
--Contador +=1 :esta línea incrementa un uno cada vez que se ejecute la función, dado que contador siempre inicia con 0 cuando se inicia el programa.
+* Contador +=1 :esta línea incrementa un uno cada vez que se ejecute la función, dado que contador siempre inicia con 0 cuando se inicia el programa.
 
--(valor_aleatorio= contador * 7 ) : Esta línea multiplica el contador * 7 para tener un número aleatorio, ya que el contador se incrementa en cada llamada de la función.
+* (valor_aleatorio= contador * 7 ) : Esta línea multiplica el contador * 7 para tener un número aleatorio, ya que el contador se incrementa en cada llamada de la función.
 
--(indice= valor_aleatorio % 3): El operador de residuo o modulo => Esto devuelve el residuo de dividir el número anterior *3
+* (indice= valor_aleatorio % 3): El operador de residuo o modulo => Esto devuelve el residuo de dividir el número anterior *3
 
--El resultado de dividir cualquier número entero *3. los unicos residuos posibles son: 0, 1 o 2. el resultado se asignará a la variable indice.
+* El resultado de dividir cualquier número entero *3. los unicos residuos posibles son: 0, 1 o 2. el resultado se asignará a la variable indice.
 
 (return opciones[indice]): Esta linea retorna el elemento en base al número de indice que se parametriza de la lista de opciones.
 
 
-*Parametriza/define rondas
+* Parametrizar rondas
 
-<img width="1100" height="286" alt="4" src="https://github.com/user-attachments/assets/f12de378-fb06-4ab0-8004-58b0122b5452" />
+<img src="https://github.com/DonnyMR12/Autonomo_2/blob/main/img4.png?raw=true" />
 
--Funcion que parametriza rondas: Se encarga de definir cuantas rondas se van a jugar antes de empezar la partida.
+* Funcion que parametriza rondas: Se encarga de definir cuantas rondas se van a jugar antes de empezar la partida.
 
--(global numero_rondas): Se utiliza global en la variable contador para poder modificar el valor del mismo ya que es una variable general.
+* (global numero_rondas): Se utiliza global en la variable contador para poder modificar el valor del mismo ya que es una variable general.
 
--except: Aquí se captura las excepciones lo cual permite mostrar en pantalla o finalizar el proceso, claro de ser el caso.
+* except: Aquí se captura las excepciones lo cual permite mostrar en pantalla o finalizar el proceso, claro de ser el caso.
 
--En caso de ingresar un valor no entero en el número no entero mostrará un mensaje de error, ya que esta función solo permite el ingreso de números enteros.
+* En caso de ingresar un valor no entero en el número no entero mostrará un mensaje de error, ya que esta función solo permite el ingreso de números enteros.
 
--Si el número es menor a 3 o mayor a 10, el programa vuelve a pedir el dato.
+* Si el número es menor a 3 o mayor a 10, el programa vuelve a pedir el dato.
 
--Si el número esta entre 3 y 10 guarda el valor y break rompe el ciclo.
+* Si el número esta entre 3 y 10 guarda el valor y break rompe el ciclo.
 
-*La elección del jugador
+* La elección del jugador
 
-<img width="935" height="152" alt="5" src="https://github.com/user-attachments/assets/6fd417cf-11ff-4384-9b16-9ab50ca552ba" />
+<img alt="5" src="https://github.com/DonnyMR12/Autonomo_2/blob/main/img5.png?raw=true" />
 
--Se sabe bien que el while true es un bucle, hasta que el jugador no ingrese la opción correcta se va seguir repitiendo.
+* Se sabe bien que el while true es un bucle, hasta que el jugador no ingrese la opción correcta se va seguir repitiendo.
 
--Si la respuesta, es decir la elección del jugador, está dentro de la lista de opciones, esta será retornada.
+* Si la respuesta, es decir la elección del jugador, está dentro de la lista de opciones, esta será retornada.
 
--Lower() y strip(): Pasa todo a minúsculas y el otro quita espacios.
+* Lower() y strip(): Pasa todo a minúsculas y el otro quita espacios.
 
-*Determinar ganador:
+* Determinar ganador:
 
-<img width="457" height="158" alt="6" src="https://github.com/user-attachments/assets/a90003a3-1383-4968-9cd3-3d43c925fb4d" />
+<img alt="6" src="https://github.com/DonnyMR12/Autonomo_2/blob/main/img8.png?raw=true" />
 
--El programa mostrará al ganador que tenga más puntos; caso contrario, mostrará empate.
+* El programa mostrará al ganador que tenga más puntos; caso contrario, mostrará empate.
 
--La funcion requiere de dos parametros "jugador"; será el número de puntos del jugador.
+* La funcion requiere de dos parametros "jugador"; será el número de puntos del jugador.
 
--El parametro "pc"  será el número de puntos de la máquina.
+* El parametro "pc"  será el número de puntos de la máquina.
 
--Entonces se hace la validación.
+* Entonces se hace la validación.
 
-*Inicialización del juego
+* Inicialización del juego
 
-<img width="805" height="645" alt="7" src="https://github.com/user-attachments/assets/2fc3be93-e9a0-4634-9777-6bba3c748c8a" />
+<img alt="7" src="https://github.com/DonnyMR12/Autonomo_2/blob/main/img6.png?raw=true" />
 
--Funcionamiento:
+## Funcionamiento
 
--Los puntos de jugador y los puntos de pc iniciarn con 0 cada vez que se ejecute la función iniciar juego()
+* Los puntos de jugador y los puntos de pc iniciarn con 0 cada vez que se ejecute la función iniciar juego()
 
--Luego la variable jugando se inicia con verdadero para que el ciclo while este activo.
+* Luego la variable jugando se inicia con verdadero para que el ciclo while este activo.
 
--Se llama la funcion (parametrizar_rondas()) para definir cuántas rondas se van a jugar.
+* Se llama la funcion (parametrizar_rondas()) para definir cuántas rondas se van a jugar.
 
--Se inicia el ciclo while, mismo que se detiene cuando la variable jugando sea falso.
+* Se inicia el ciclo while, mismo que se detiene cuando la variable jugando sea falso.
 
--La siguiente línea valida si el (numero_rondas == 0), en caso que número de rondas sea = 0 mostrará un mensaje partida finalizada, caso contrario seguiá la siguiente ronda.
+* La siguiente línea valida si el (numero_rondas == 0), en caso que número de rondas sea = 0 mostrará un mensaje partida finalizada, caso contrario seguiá la siguiente ronda.
 
--Si número de rondas es = 0 => Se llama a la función determinar_ganador(puntos_jugador, puntos_pc), luego se hará una validación si se quiere continuar con el jugando caso contrario se pondra.
+* Si número de rondas es = 0 => Se llama a la función determinar_ganador(puntos_jugador, puntos_pc), luego se hará una validación si se quiere continuar con el jugando caso contrario se pondra.
 
--Se finalizará el ciclo while con la variable jugando= false, si en caso de ingresar (Y) se reiniciará los puntos de los jugadores y se llamará a la funcion (parametrizar rondas()).
+* Se finalizará el ciclo while con la variable jugando= false, si en caso de ingresar (Y) se reiniciará los puntos de los jugadores y se llamará a la funcion (parametrizar rondas()).
 
-*Menú
+<img alt="9" src="https://github.com/DonnyMR12/Autonomo_2/blob/main/img.png?raw=true" />
 
-<img width="685" height="480" alt="9" src="https://github.com/user-attachments/assets/8cbc5bb8-4e67-4909-b005-7ee0ca62dac0" />
+* Menú
 
-Seleccionmenu()
--Esta función se encarga de llamar a las demás funciones según la opción que se ponga en el input.
+<img alt="9" src="https://github.com/DonnyMR12/Autonomo_2/blob/main/img7.png?raw=true" />
 
--El menú funciona mediante el ciclo while juego_inciando, el cual mantiene activo el programa.
+```
+SeleccionMenu()
+```
 
--Se puede considerar que esta función es la capa principal que controla todas las funciones que se ejecutan a partir del input.
+* Esta función se encarga de llamar a las demás funciones según la opción que se ponga en el input.
 
--Si el jugador digita 1: se llama a la función mostrarreglas()
+* El menú funciona mediante el ciclo while juego_inciando, el cual mantiene activo el programa.
 
--Si el jugador digita 2: se llama a la función iniciarjuego()
+* Se puede considerar que esta función es la capa principal que controla todas las funciones que se ejecutan a partir del input.
 
--Si el jugador digita 3: Se sale del juego, ya que el uso el global para cambiar el valor a la variable juego_iniciado a False.
+* Si el jugador digita 1: se llama a la función mostrarreglas()
 
--Al cambiar juego_iniciado a False, el ciclo del while se rompe y termina el juego.
+* Si el jugador digita 2: se llama a la función iniciarjuego()
 
-- Y si no es ninguno de estos, me va mostrá que la opción no es válida y se volverá a empezar el ciclo de seleción
+* Si el jugador digita 3: Se sale del juego, ya que el uso el global para cambiar el valor a la variable juego_iniciado a False.
+
+* Al cambiar juego_iniciado a False, el ciclo del while se rompe y termina el juego.
+
+* Y si no es ninguno de estos, me va mostrá que la opción no es válida y se volverá a empezar el ciclo de seleción.
+
+# Tabla de Resultados Completa
+
+| Jugador | PC      | Ganador   |
+|---------|---------|-----------|
+| Piedra  | Tijera  | Jugador   |
+| Piedra  | Papel   | PC        |
+| Piedra  | Piedra  | Empate    |
+| Papel   | Piedra  | Jugador   |
+| Papel   | Tijera  | PC        |
+| Papel   | Papel   | Empate    |
+| Tijera  | Papel   | Jugador   |
+| Tijera  | Piedra  | PC        |
+| Tijera  | Tijera  | Empate    |
 
 
 
